@@ -1,40 +1,41 @@
-package by.epam.mtv.task;
+package by.epam.string.task1;
 
 import java.util.Scanner;
 
 public class StringTask {
 	
 	//////////////////GetOdd/////////////////////////
-	public static String GetOdd(String source) {
+	public static String odd(String source) {
 		String oddStr="";
 		char currentChar;
 
 		for(int i = 0 ; i < source.length() ; i++) {
 			currentChar = source.charAt(i);
-			if(currentChar % 2 == 1)
+			if(currentChar % 2 == 1) {
 				oddStr += currentChar;
+			}
 		}
-
 		return oddStr;		
 	}
 
 	
 	//////////////////GetEven////////////////////////
-	public static String GetEven(String source) {
+	public static String even(String source) {
 		String evenStr="";
 		char currentChar;
 
 		for(int i = 0; i < source.length(); i++) {
 			currentChar = source.charAt(i);
-			if(currentChar % 2 == 0)
+			if(currentChar % 2 == 0) {
 				evenStr += currentChar;
+			}
 		}
 		return evenStr;
 	}
 	
 	
 	//////////////////GetUpperCasePercent////////////
-	public static double GetUpperCasePercent(String source) {
+	public static double upperCasePercent(String source) {
 		if(source.isEmpty())
 			return 0;
 		else {
@@ -44,8 +45,9 @@ public class StringTask {
 		
 			for(int i = 0 ; i < source.length() ; i++) {
 				currentChar = source.charAt(i);
-				if(Character.isUpperCase(currentChar))
+				if(Character.isUpperCase(currentChar)) {
 					count++;
+				}
 			}
 		double percent = count / source.length();
 		return percent ;
@@ -54,7 +56,7 @@ public class StringTask {
 	
 	
 	//////////////////GetLowerCasePercent////////////
-	public static double GetLowerCasePercent(String source) {
+	public static double lowerCasePercent(String source) {
 		if(source.isEmpty())
 			return 0;
 		else {
@@ -74,7 +76,7 @@ public class StringTask {
 	
 	
 	//////////////////DeleteSame/////////////////////
-	public static String DeleteSame(String source) {
+	public static String deleteSame(String source) {
 		StringBuilder resultStr = new StringBuilder("");
 		String currentSymbol;
 		
@@ -88,7 +90,7 @@ public class StringTask {
 	
 	
 	//////////////////CountSymbol/////////////////////
-	public static int CountSymbol(String source, char find) {
+	public static int countSymbol(String source, char find) {
 		int count;
 		int fromIND;
 		count = 0;
@@ -103,14 +105,14 @@ public class StringTask {
 	
 	
 	/////////////////ReverseString////////////////////
-	public static String ReverseString(String source) {
+	public static String reverseString(String source) {
 		StringBuilder resultStr = new StringBuilder(source);		
 		return resultStr.reverse().toString();
 	}
 	
 	
 	/////////////////InsertSubstring//////////////////
-	public static String InsertSubstring(String source, int index, String sub) {
+	public static String insertSubstring(String source, int index, String sub) {
 		if((index >= source.length()) || (index < 0))
 			return source;
 		StringBuilder resultStr = new StringBuilder(source);		
@@ -119,7 +121,7 @@ public class StringTask {
 	
 	
 	/////////////////DeleteSubstring//////////////////
-	public static String DeleteSubstring(String source, String sub) {
+	public static String deleteSubstring(String source, String sub) {
 		if(source.indexOf(sub)==-1)
 			return source;
 		return source.replace(sub,"");
@@ -127,7 +129,7 @@ public class StringTask {
 	
 	
 	/////////////////CopySubstring////////////////////
-	public static String CopySubstring(String source, int start, int end) {
+	public static String copySubstring(String source, int start, int end) {
 		if((start < 0) || (start >= source.length()-1) || (end < 0) 
 				|| (end >= source.length()) || (end - start < 1))
 			return source;
@@ -136,7 +138,7 @@ public class StringTask {
 	
 	
 	/////////////////CountSubstring///////////////////
-	public static int CountSubstring(String source, String find) {
+	public static int countSubstring(String source, String find) {
 		int count;
 		int fromIND;
 		count=0;
@@ -151,7 +153,7 @@ public class StringTask {
 	
 	
 	////////////////PrintReverseOrderOfWords//////////
-	public static void PrintReverseOrderOfWords(String source) {
+	public static void printReverseOrderOfWords(String source) {
 		String[] words = source.split("[,.!?:; ]");
 		
 		for(int i=words.length -1 ;i > -1;i--) {
@@ -163,7 +165,7 @@ public class StringTask {
 	
 	
 	///////////////ReplaceSpace///////////////////////
-	public static String ReplaceSpace(String source) {
+	public static String replaceSpace(String source) {
 		String withoutSpace = "";
 		String[] words = source.trim().split(" +");
 		
@@ -185,7 +187,7 @@ public class StringTask {
 	
 	
 	////////////////GetMaxWord////////////////////////
-	public static String GetMaxtWord(String source) {
+	public static String findMaxtWord(String source) {
 		String[] words = source.split("[,.!?:; ]");		
 		if(words.length==0)
 			return "";
@@ -206,8 +208,8 @@ public class StringTask {
 	
 	
 	////////////////ReplaseABInMAX////////////////////
-	public static String ReplaseABInMAX(String source) {
-		String maxWord = GetMaxtWord(source);
+	public static String replaseABInMAX(String source) {
+		String maxWord = findMaxtWord(source);
 		String newMaxWord = maxWord.replaceAll("a", "b");
 		
 		return source.replaceAll(maxWord, newMaxWord);
@@ -215,7 +217,7 @@ public class StringTask {
 
 	
 	////////////////GetMinLenght//////////////////////
-	public static int GetMinLength(String source) {
+	public static int findMinLength(String source) {
 		String[] words = source.trim().split("[,.!?:; +]");		
 		if(words.length==0)
 			return 0;
@@ -240,7 +242,7 @@ public class StringTask {
 	
 	
 	////////////////CountWords////////////////////////
-	public static int CountWords(String source) {
+	public static int countWords(String source) {
 		String[] words = source.trim().split("[,.!?:; +]");
 		int countWords;
 		countWords = 0;
@@ -253,7 +255,7 @@ public class StringTask {
 	
 	
 	////////////////ChangeLastFirst////////////////////////
-	public static String ChangeFirstLast(String source) {			
+	public static String changeFirstLast(String source) {			
 		String[] words = source.trim().split("[,.!?:; ]");	
 		String first;
 		String last;
@@ -289,7 +291,7 @@ public class StringTask {
 	
 	
 	////////////////DeleteLast////////////////////////
-	public static String DeleteLast(String source) {
+	public static String deleteLast(String source) {
 		String[] words = source.split("[,.!?:; +]");		
 
 		String lastWord = "";
@@ -312,13 +314,13 @@ public class StringTask {
 	}
 
 	////////////////AddSpace//////////////////////////
-	public static String AddSpace(String source) {		
+	public static String addSpace(String source) {		
 		return " " + source + " ";
 	}
 	
 	
 	///////////////IsPolindrom////////////////////////
-	public static boolean IsPolindrom(String source) {
+	public static boolean isPolindrom(String source) {
 		for(int i = 0; i < (source.length()/2); i++) {
 			if(source.charAt(i) != source.charAt(source.length() - i - 1))
 				return false;
@@ -328,13 +330,13 @@ public class StringTask {
 	
 	
 	///////////////ChangeSubstring////////////////////
-	public static String ChangeSubstring(String source, String oldSubstring, String newSubstring) {
+	public static String changeSubstring(String source, String oldSubstring, String newSubstring) {
 		return source.replace(oldSubstring, newSubstring);
 	}
 		
 	
 	////////////////DeleteFixLength////////////////////////
-	public static String DeleteFixLength(String source, int fixLength) {		
+	public static String deleteFixLength(String source, int fixLength) {		
 		String result = new String(source);		
 		String[] words = source.split("[,.!?:; ]");
 		for(int i = 0; i < words.length; i++) {
@@ -347,7 +349,7 @@ public class StringTask {
 	
 	
 	////////////////DeleteExtraSpace////////////////////////
-	public static String DeleteExtraSpace(String source) {		
+	public static String deleteExtraSpace(String source) {		
 		String result = "";		
 		String[] words = source.trim().split(" ");
 
@@ -361,7 +363,7 @@ public class StringTask {
 	
 	
 	////////////////PrintWords//////////////////////////////
-	public static void PrintWords(String source) {			
+	public static void printWords(String source) {			
 		String[] words = source.trim().split("[,.!?:; ]");
 		
 		for(int i = 0; i < words.length; i++) {
@@ -373,44 +375,43 @@ public class StringTask {
 	
 	
 	////////////////Summa//////////////////////////////////
-	public static String Summa(String num1, String num2) {
+	public static String summa(String num1, String num2) {
+		String n1Str;
+		String n2Str;
+		n1Str = new String(num1);
+		n2Str = new String(num2);
+		
 		if(num1.length() > num2.length()) {
-			String n1Str;
-			String n2Str;
-			n1Str = new String(num1);
-			n2Str = new String(num2);
-			
 			while(n2Str.length() != n1Str.length()) {
 				n2Str = "0" + n2Str;
 			}
-			
-			n1Str = (new StringBuilder(n1Str).reverse()).toString();
-			n2Str = (new StringBuilder(n2Str).reverse()).toString();
-			
-			String answer;
-			answer = "";
-			int add;
-			add = 0;
-			int n1;
-			int n2;
-			int sum;
-			
-			for(int i = 0; i < n1Str.length(); i++) {
-				n1=Integer.parseInt(n1Str.substring(i,i+1));
-				n2=Integer.parseInt(n2Str.substring(i,i+1));
-				sum = n1 + n2 + add;
-				
-				answer += (sum % 10);
-				if(sum / 10 == 1)
-					add = 1;
-				else
-					add=0;
-			}
-			return (new StringBuilder(answer)).reverse().toString();
 		}
-		else 
-			return Summa(num2, num1);
+			
+		n1Str = (new StringBuilder(n1Str).reverse()).toString();
+		n2Str = (new StringBuilder(n2Str).reverse()).toString();
+		
+		String answer;
+		answer = "";
+		int add;
+		add = 0;
+		int n1;
+		int n2;
+		int sum;
+			
+		for(int i = 0; i < n1Str.length(); i++) {
+			n1=Integer.parseInt(n1Str.substring(i,i+1));
+			n2=Integer.parseInt(n2Str.substring(i,i+1));
+			sum = n1 + n2 + add;
+				
+			answer += (sum % 10);
+			if(sum / 10 == 1)
+				add = 1;
+			else
+				add=0;
+		}
+		return (new StringBuilder(answer)).reverse().toString();
 	}
+
 	
 	
 //////////////////////////////////////////////////////////////////////////////
@@ -420,7 +421,6 @@ public class StringTask {
 		Scanner in = new Scanner(System.in);
 		System.out.println ("Input source string :");
 		String sourceStr;
-		//sourceStr = "Mogilev ;Nadushka naden, f jifl jf aahf";
 		sourceStr = in.nextLine();
 		
 		System.out.println("Main String : "+ sourceStr);
@@ -430,8 +430,8 @@ public class StringTask {
 		//////////////EVEN AND ODD//////////////////////////////	
 		String oddStr; 
 		String evenStr;
-		oddStr= GetOdd(sourceStr);
-		evenStr = GetEven(sourceStr);
+		oddStr= odd(sourceStr);
+		evenStr = even(sourceStr);
 		
 		System.out.println("Only odd :" + oddStr);
 		System.out.println("Only even :" + evenStr);
@@ -441,8 +441,8 @@ public class StringTask {
 		///////////////PERCENT OF LOW AND UPPER CASE////////////
 		double upperCasePercent; 
 		double lowerCasePercent;
-		upperCasePercent = GetUpperCasePercent(sourceStr);
-		lowerCasePercent = GetLowerCasePercent(sourceStr);
+		upperCasePercent = upperCasePercent(sourceStr);
+		lowerCasePercent = lowerCasePercent(sourceStr);
 		
 		System.out.println("Persent of UpperCase : " + upperCasePercent);
 		System.out.println("Persent of LowerCase : " + lowerCasePercent);
@@ -451,7 +451,7 @@ public class StringTask {
 		
 		///////////////DELITE SAME/////////////////////////////
 		String deleteSame;
-		deleteSame = DeleteSame(sourceStr);
+		deleteSame = deleteSame(sourceStr);
 		
 		System.out.println("Delete same : " + deleteSame);
 		System.out.println();
@@ -462,7 +462,7 @@ public class StringTask {
 		char symbol;
 		symbol = in.next().charAt(0);
 		int countSybmol;
-		countSybmol = CountSymbol(sourceStr,symbol);
+		countSybmol = countSymbol(sourceStr,symbol);
 		
 		System.out.println("countOfSymbol : "+ countSybmol);
 		System.out.println();
@@ -470,7 +470,7 @@ public class StringTask {
 		
 		///////////////REVERSE STRING//////////////////////////
 		String reverse;
-		reverse = ReverseString(sourceStr);
+		reverse = reverseString(sourceStr);
 		
 		System.out.println("Reverse String : "+ reverse);
 		System.out.println();
@@ -486,7 +486,7 @@ public class StringTask {
 		indexInsert = in.nextInt();
 				
 		String insertStr;
-		insertStr = InsertSubstring(sourceStr, indexInsert, insertSubstring);
+		insertStr = insertSubstring(sourceStr, indexInsert, insertSubstring);
 		
 		System.out.println("Insert String : " + insertStr);
 		System.out.println();
@@ -498,7 +498,7 @@ public class StringTask {
 		deleteSubstring = in.next();
 		
 		String deleteStr;
-		deleteStr = DeleteSubstring(sourceStr, deleteSubstring);
+		deleteStr = deleteSubstring(sourceStr, deleteSubstring);
 		
 		System.out.println("Delete Substring : " + deleteStr);
 		System.out.println();
@@ -514,7 +514,7 @@ public class StringTask {
 		endInd = in.nextInt();
 		
 		String copyStr;
-		copyStr = CopySubstring(sourceStr, startInd, endInd);
+		copyStr = copySubstring(sourceStr, startInd, endInd);
 		
 		System.out.println("Copy Substring : " + copyStr);
 		System.out.println();
@@ -533,7 +533,7 @@ public class StringTask {
 		countedSubstring = in.next();
 		
 		int countSubstring;
-		countSubstring= CountSubstring(sourceStr,countedSubstring);
+		countSubstring= countSubstring(sourceStr,countedSubstring);
 		
 		System.out.println("countOfSubstring : "+ countSubstring);
 		System.out.println();
@@ -541,48 +541,48 @@ public class StringTask {
 
 		///////////////REVERSE WORDS///////////////////////////
 		System.out.println("ReverseOrderOFWords : ");
-		PrintReverseOrderOfWords(sourceStr);
+		printReverseOrderOfWords(sourceStr);
 		System.out.println();
 
 		
 		///////////////REPLASE a-b///////////////////////////
-		String replaseAtoB = ReplaseABInMAX(sourceStr);
+		String replaseAtoB = replaseABInMAX(sourceStr);
 		System.out.println("Replase a to b : " + replaseAtoB);
 		System.out.println();
 
 		
 		///////////////MIN LENGTH///////////////////////////
-		int minLength = GetMinLength(sourceStr);
+		int minLength = findMinLength(sourceStr);
 		System.out.println("Min length : " + minLength);
 		System.out.println();
 		
 		
 		/////////////COUNTING WORDS/////////////////////////
-		int countWords = CountWords(sourceStr);
+		int countWords = countWords(sourceStr);
 		System.out.println("countOfWords : "+ countWords);
 		System.out.println();
 		
 		
 		////////////////CHANGE FIRST AND LAST////////////////////////	
 		String changeFirstAndLast;
-		changeFirstAndLast = ChangeFirstLast(sourceStr);
+		changeFirstAndLast = changeFirstLast(sourceStr);
 		System.out.println("Change First and Last : " + changeFirstAndLast);
 		
 		
 		///////////////DELETE LAST//////////////////////////////		
-		String withoutLast = DeleteLast(sourceStr);
+		String withoutLast = deleteLast(sourceStr);
 		System.out.println("Delete Last : "+ withoutLast);
 		System.out.println();
 		
 		
 		///////////////REPLACE SPACE///////////////////////////
-		String replaceSpace = ReplaceSpace(sourceStr);
+		String replaceSpace = replaceSpace(sourceStr);
 		System.out.println("Replase Spase : " + replaceSpace);
 		System.out.println();
 		
 		
 		///////////////IS POLINDROM//////////////////////////////
-		boolean isPolindrom = IsPolindrom(sourceStr);
+		boolean isPolindrom = isPolindrom(sourceStr);
 		System.out.println("Is Polindrom : "+ isPolindrom);
 		System.out.println();
 		
@@ -596,7 +596,7 @@ public class StringTask {
 		String newSubstring;
 		newSubstring = in.next();		
 		
-		String changedSubstring = ChangeSubstring(sourceStr,oldSubstring, newSubstring);
+		String changedSubstring = changeSubstring(sourceStr,oldSubstring, newSubstring);
 		
 		System.out.println("Change Substring : "+ changedSubstring);
 		System.out.println();
@@ -607,7 +607,7 @@ public class StringTask {
 		int fixLength;
 		fixLength = in.nextInt();
 		
-		String withoutFixLength = DeleteFixLength(sourceStr, fixLength);
+		String withoutFixLength = deleteFixLength(sourceStr, fixLength);
 		
 		System.out.println("Delete with length "+fixLength+" : "+ withoutFixLength );
 		System.out.println();
@@ -616,7 +616,7 @@ public class StringTask {
 		
 		////////////////DELETE EXTRA SPACE////////////////////////	
 		String withoutExtraSpace;
-		withoutExtraSpace= DeleteExtraSpace(sourceStr);
+		withoutExtraSpace= deleteExtraSpace(sourceStr);
 		
 		System.out.println("Delete extra space : "+ withoutExtraSpace );
 		System.out.println();
@@ -624,9 +624,9 @@ public class StringTask {
 		
 		////////////////PRINT WORDS////////////////////////	
 		System.out.println("Print words : ");
-		PrintWords(sourceStr);		
+		printWords(sourceStr);		
 		System.out.println();
-		
+
 		
 		////////////////SUMMA////////////////////////	
 		System.out.print("Insert num1 : ");
@@ -638,7 +638,7 @@ public class StringTask {
 		num2 = in.next();
 		
 		String sum;
-		sum = Summa(num1,num2);
+		sum = summa(num1,num2);
 		System.out.println("Summa : "+ sum);
 		
 		
